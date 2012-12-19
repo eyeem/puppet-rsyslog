@@ -43,3 +43,16 @@
       }
     }
 
+### Log custom file to remote server
+
+    node /box/ {
+      include rsyslog
+
+      rsyslog::inputfile { 'foobar':
+        ensure             => present,
+        inputfilename      => '/var/log/foobar',
+        inputfiletag       => 'foobar',
+        inputfilestatefile => "stat-${name}",
+      }
+    }
+

@@ -1,0 +1,9 @@
+# Managed by Puppet
+
+$InputFileName       <%= scope.lookupvar('inputfilename') %>
+$InputFileTag        <%= scope.lookupvar('inputfiletag') %>:
+$InputFileStateFile  <%= scope.lookupvar('inputfilestatefile') %>
+$InputFileSeverity   <%= scope.lookupvar('inputfileseverity') %>
+$InputFileFacility   <%= scope.lookupvar('inputfilefacility') %>
+$InputRunFileMonitor
+
