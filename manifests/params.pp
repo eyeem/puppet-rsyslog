@@ -19,6 +19,7 @@ class rsyslog::params {
       $config_dir_mode    = '0755'
       $config_group       = 'root'
       $config_mode        = '0644'
+      $config_purge       = false
       $config_user        = 'root'
       $log_dir            = ''
       $pid_file           = ''
@@ -38,6 +39,7 @@ class rsyslog::params {
       $config_dir_mode    = '0755'
       $config_file_mode   = '0644'
       $config_group       = 'root'
+      $config_purge       = false
       $config_user        = 'root'
       $log_dir            = '/var/log'
       $pid_file           = '/var/run/rsyslogd.pid'

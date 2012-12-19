@@ -15,8 +15,10 @@ class rsyslog::config {
       content => template("rsyslog/rsyslog.${::osfamily}.conf");
 
     $::rsyslog::config_dir:
-      ensure => directory,
-      mode   => $::rsyslog::config_dir_mode;
+      ensure  => directory,
+      mode    => $::rsyslog::config_dir_mode,
+      purge   => $::rsyslog::config_purge,
+      recurse => true;
 
     $::rsyslog::log_dir:
       ensure => directory,

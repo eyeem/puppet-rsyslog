@@ -5,6 +5,7 @@ class rsyslog (
   $config_dir_mode    = $::rsyslog::params::config_dir_mode,
   $config_file_mode   = $::rsyslog::params::config_file_mode,
   $config_group       = $::rsyslog::params::config_group,
+  $config_purge       = $::rsyslog::params::config_purge,
   $config_user        = $::rsyslog::params::config_user,
   $log_dir            = $::rsyslog::params::log_dir,
   $pid_file           = $::rsyslog::params::pid_file,
