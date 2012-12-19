@@ -10,6 +10,10 @@ class rsyslog::config {
   }
 
   file {
+    '/etc/rsyslog.conf':
+      ensure  => present,
+      content => template("rsyslog/rsyslog.${::osfamily}.conf");
+
     $::rsyslog::config_dir:
       ensure => directory,
       mode   => $::rsyslog::config_dir_mode;

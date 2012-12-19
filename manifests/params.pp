@@ -6,7 +6,7 @@ class rsyslog::params {
 
   case $::operatingsystem {
     'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon', 'Fedora': {
-      $config_dir         = '/etc/rsyslog'
+      $config_dir         = '/etc/rsyslog.d'
       $config_dir_mode    = '0755'
       $config_group       = 'root'
       $config_mode        = '0644'
