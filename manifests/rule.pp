@@ -12,10 +12,18 @@ define rsyslog::rule (
 
   case $ensure {
     'present': {
-      file {
-        "${::rsyslog::config_dir}/${name}.conf":
-          ensure  => $ensure,
-          content => template('rsyslog/rule.conf.erb');
+      if ! $content {
+        file {
+          "${::rsyslog::config_dir}/${name}.conf":
+            ensure  => $ensure,
+            content => template('rsyslog/rule.conf.erb');
+        }
+      } else {
+        file {
+          "${::rsyslog::config_dir}/${name}.conf":
+            ensure  => $ensure,
+            content => $content;
+        }
       }
     }
 

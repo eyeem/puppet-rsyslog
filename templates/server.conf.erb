@@ -1,0 +1,12 @@
+# Managed with Puppet
+<% if @server_udp_enable %>
+$ModLoad imudp
+$UDPServerAddress <%= scope.lookupvar('rsyslog::server_udp_address') %>
+$UDPServerRun <%= scope.lookupvar('rsyslog::server_udp_port') %>
+<% end -%>
+<% if @server_tcp_enable %>
+$ModLoad imptcp
+$Address <%= scope.lookupvar('rsyslog::server_tcp_address') %>
+$InputPTCPServerRun <%= scope.lookupvar('rsyslog::server_tcp_port') %>
+<% end -%>
+

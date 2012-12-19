@@ -4,6 +4,14 @@ class rsyslog::params {
 
   $server = false
 
+  $server_tcp_enable  = false
+  $server_tcp_port    = '514'
+  $server_tcp_address = '0.0.0.0'
+
+  $server_udp_enable  = true
+  $server_udp_address = '0.0.0.0'
+  $server_udp_port    = '514'
+
   case $::operatingsystem {
     'RedHat', 'CentOS', 'Scientific', 'OEL', 'Amazon', 'Fedora': {
       $config_dir         = '/etc/rsyslog.d'
