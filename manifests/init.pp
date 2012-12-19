@@ -12,6 +12,7 @@ class rsyslog (
   $pkg_ensure         = $::rsyslog::params::pkg_ensure,
   $pkg_list           = $::rsyslog::params::pkg_list,
   $server             = $::rsyslog::params::server,
+  $server_log_dir     = $::rsyslog::params::server_log_dir,
   $server_tcp_address = $::rsyslog::params::server_tcp_address,
   $server_tcp_enable  = $::rsyslog::params::server_tcp_enable,
   $server_tcp_port    = $::rsyslog::params::server_tcp_port,

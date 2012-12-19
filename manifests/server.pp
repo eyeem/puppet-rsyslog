@@ -3,6 +3,7 @@
 class rsyslog::server {
 
   $server             = $::rsyslog::server
+  $server_log_dir     = $::rsyslog::server_log_dir
   $server_tcp_address = $::rsyslog::server_tcp_address
   $server_tcp_enable  = $::rsyslog::server_tcp_enable
   $server_tcp_port    = $::rsyslog::server_tcp_port
@@ -24,6 +25,11 @@ class rsyslog::server {
     rsyslog::rule { 'server':
       ensure  => present,
       content => template('rsyslog/server.conf.erb');
+    }
+
+    file { $::rsyslog::server_log_dir:
+      ensure => directory,
+      mode   => $::rsyslog::config_dir_mode;
     }
 
   }

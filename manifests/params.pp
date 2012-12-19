@@ -2,7 +2,8 @@
 #
 class rsyslog::params {
 
-  $server = false
+  $server         = false
+  $server_log_dir = '/var/log/remote'
 
   $server_tcp_enable  = false
   $server_tcp_port    = '514'
