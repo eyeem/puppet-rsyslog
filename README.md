@@ -13,7 +13,6 @@
       include rsyslog
     }
 
-
 ### Enable RSyslog server
 
     node /box/ {

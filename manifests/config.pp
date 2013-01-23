@@ -27,6 +27,5 @@ class rsyslog::config {
     $::rsyslog::pid_file:
       ensure => present;
   }
-
 }
 

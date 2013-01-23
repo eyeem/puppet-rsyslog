@@ -29,7 +29,7 @@ define rsyslog::inputfile (
     }
 
     default: {
-      fail 'No ensure value found for rsyslog inputfile'
+      fail 'No ensure value found for rsyslog inputfile.'
     }
   }
 }

@@ -33,6 +33,5 @@ class rsyslog (
   class { 'rsyslog::server': } ~>
   class { 'rsyslog::service': } ->
   Class['rsyslog']
-
 }
 

@@ -1,9 +1,7 @@
 # = Class rsyslog::server
 #
 class rsyslog::server {
-
   if $::rsyslog::server {
-
     # Detect port conflicts when both TCP and UDP are enabled.
     if $::rsyslog::server_tcp_enable and $::rsyslog::server_udp_enable {
       if $::rsyslog::server_tcp_port == $::rsyslog::server_udp_port {
@@ -22,8 +20,6 @@ class rsyslog::server {
       ensure => directory,
       mode   => $::rsyslog::config_dir_mode;
     }
-
   }
-
 }
 

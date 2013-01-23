@@ -1,7 +1,6 @@
 # = Class rsyslog::params
 #
 class rsyslog::params {
-
   $server         = false
   $server_log_dir = '/var/log/remote'
 
@@ -58,6 +57,5 @@ class rsyslog::params {
       fail "Operating system ${::operatingsystem} is not supported yet."
     }
   }
-
 }
 
