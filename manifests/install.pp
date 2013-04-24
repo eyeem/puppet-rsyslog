@@ -6,8 +6,8 @@ class rsyslog::install {
   }
 
   if $::rsyslog::pkg_deps {
-    package { $::awstats::pkg_deps:
-      ensure => $::awstats::pkg_ensure,
+    package { $::rsyslog::pkg_deps:
+      ensure => $::rsyslog::pkg_ensure,
       before => Package[$::rsyslog::pkg_list],
     }
   }
