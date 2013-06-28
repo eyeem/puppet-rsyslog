@@ -12,7 +12,7 @@ class rsyslog::config {
   file {
     '/etc/rsyslog.conf':
       ensure  => present,
-      content => template("rsyslog/rsyslog.${::osfamily}.conf");
+      content => template("rsyslog/rsyslog.conf.erb");
 
     $::rsyslog::config_dir:
       ensure  => directory,
@@ -26,6 +26,12 @@ class rsyslog::config {
 
     $::rsyslog::pid_file:
       ensure => present;
+  }
+
+  if $::rsyslog::default_rules == true {
+    rsyslog::rule { 'default':
+      content => template('rsyslog/50-default.conf.erb')
+    }
   }
 }
 

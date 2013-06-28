@@ -2,6 +2,7 @@
 #
 define rsyslog::rule (
   $content = undef,
+  $prio    = '50',
   $ensure  = present,
 ) {
   File {
@@ -14,13 +15,13 @@ define rsyslog::rule (
     'present': {
       if ! $content {
         file {
-          "${::rsyslog::config_dir}/${name}.conf":
+          "${::rsyslog::config_dir}/${prio}-${name}.conf":
             ensure  => $ensure,
             content => template('rsyslog/rule.conf.erb');
         }
       } else {
         file {
-          "${::rsyslog::config_dir}/${name}.conf":
+          "${::rsyslog::config_dir}/${prio}-${name}.conf":
             ensure  => $ensure,
             content => $content;
         }
@@ -29,7 +30,7 @@ define rsyslog::rule (
 
     'absent': {
       file {
-        "${::rsyslog::config_dir}/${name}":
+        "${::rsyslog::config_dir}/${prio}-${name}.conf":
           ensure => $ensure;
       }
     }
