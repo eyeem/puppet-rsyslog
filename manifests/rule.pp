@@ -9,6 +9,7 @@ define rsyslog::rule (
     group => $::rsyslog::config_group,
     owner => $::rsyslog::config_user,
     mode  => $::rsyslog::config_mode,
+    notify => Service[$::rsyslog::service_name]
   }
 
   case $ensure {
