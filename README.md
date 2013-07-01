@@ -4,6 +4,7 @@
 
 * Debian 5 (Lenny)
 * Debian 6 (Squeeze)
+* Ubuntu 12.04 (Precise)
 
 ## Example usage
 
