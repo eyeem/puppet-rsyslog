@@ -1,8 +1,5 @@
 # Managed with Puppet
 
-#$template RemoteHost,"/var/log/remote/hosts/%HOSTNAME%/%$YEAR%/%$MONTH%/%$DAY%/syslog.log"
-$template RemoteHost,"/var/log/remote/hosts/%HOSTNAME%/syslog.log"
-*.* ?RemoteHost
 <% if @server_udp_enable %>
 $ModLoad imudp
 $UDPServerAddress <%= scope.lookupvar('rsyslog::server_udp_address') %>
